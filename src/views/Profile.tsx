@@ -1,5 +1,5 @@
 import Container from "../components/Container";
-import backgroundImage from "../assets/backgroundProfile.png";
+import backgroundImage from "../assets/bgProfile.jpg";
 
 const cards = [
   {
@@ -12,10 +12,7 @@ const cards = [
 export default function Profile() {
   return (
     <>
-      <Container 
-        cards={cards}
-        background={backgroundImage} 
-      />
+      <Container cards={cards} background={backgroundImage} />
     </>
   );
 }

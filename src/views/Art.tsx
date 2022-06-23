@@ -1,5 +1,5 @@
 import Container from "../components/Container";
-import backgroundImage from "../assets/backgroundArt.png";
+import backgroundImage from "../assets/bgArt.jpg";
 import art1 from "../assets/views/art1.jpg";
 import art2 from "../assets/views/art2.jpg";
 
@@ -17,12 +17,9 @@ const cards = [
 ];
 
 export default function Art() {
-	return (
-		<>
-      <Container 
-        cards={cards}
-        background={backgroundImage} 
-      />
+  return (
+    <>
+      <Container cards={cards} background={backgroundImage} />
     </>
-	)
+  );
 }

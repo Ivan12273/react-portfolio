@@ -1,14 +1,11 @@
 import { makeStyles } from "@material-ui/styles";
 import { ContainerItem } from "../interfaces/container.interface";
 import { ContainerStyle } from "../interfaces/containerStyle.interface";
-import backgroundDefault from "../assets/backgroundDefault.png";
+import backgroundDefault from "../assets/bgProfile.jpg";
 import Card from "./Card";
 import Header from "./Header";
 
-export default function Container({
-  cards,
-  background,
-}: ContainerItem) {
+export default function Container({ cards, background }: ContainerItem) {
   const styleProps: ContainerStyle = {
     backgroundImage: background || backgroundDefault,
   };
@@ -18,11 +15,16 @@ export default function Container({
       <div className={`${classes.backgroundImage} ${classes.scrollingImage}`}>
         <Header />
         <div className={classes.cardContainer}>
-          {
-            cards.map((card) => {
-              return <Card title={card.title} description={card.description} imageUrl={card.imageUrl} />
-            })
-          }
+          {cards.map((card) => {
+            return (
+              <Card
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                imageUrl={card.imageUrl}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

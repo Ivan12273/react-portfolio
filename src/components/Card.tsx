@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/styles";
 import { CardItem } from "../interfaces/card.interface";
-import backgroundDefault from "../assets/backgroundDefault.png";
 
 export default function Card({ title, description, imageUrl }: CardItem) {
   const classes = useStyles();
@@ -8,15 +7,11 @@ export default function Card({ title, description, imageUrl }: CardItem) {
     <div className={classes.card}>
       <div className={`${classes.face} ${classes.front}`}>
         <img src={imageUrl} alt="" />
-        <h3>Title</h3>
+        <h3>{title}</h3>
       </div>
       <div className={`${classes.face} ${classes.back}`}>
-        <h3>Title</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eos
-          eveniet voluptatibus ullam possimus dicta, tempora, ipsum sint
-          provident soluta magnam dolorum repellat eius minima?
-        </p>
+        <h3>{title}</h3>
+        <p>{description}</p>
         <div className={classes.link}>
           <a href="">Details</a>
         </div>
@@ -96,7 +91,7 @@ const useStyles = makeStyles({
     height: "50px",
     lineHeight: "50px",
     "& a": {
-      fontSize: "26px",    
+      fontSize: "26px",
       color: "#f3f3f3",
     },
   },
